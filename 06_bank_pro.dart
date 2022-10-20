@@ -10,7 +10,7 @@ class Bank {
   void withdrow(int withdrawAmt) {
     if (withdrawAmt > (totalBalance - 1000)) {
       print("\n Limit over");
-      print("\n you need to take minimum balance 1000...try again.");
+      print("\n you need to maintain minimum balance 1000...try again.");
     } else {
       totalBalance = totalBalance - withdrawAmt;
       print("\n Available Balance : $totalBalance");
@@ -26,20 +26,20 @@ void main() {
   Bank show = Bank();
   int? accountNo = 1234567;
   String? password = "nency";
-  print("\n\n Welcome to Bank");
+  print("\n\n Welcome to Bank...");
   print("\n Enter Your A/C No. : ");
   int? getaAccountNo = int.parse(stdin.readLineSync()!);
   if (accountNo != getaAccountNo) {
     print("\n your A/C no is Wrong..!! Please try Again.");
   } else {
     print("\n your A/C no : $getaAccountNo");
-    print("\n Enter Your PassWord");
+    print("\n Enter Your PassWord : ");
     String? getPass = stdin.readLineSync();
     if (password != getPass) {
       print("\n Your Password is Wrong..!! Please try Again.");
     } else {
       print("\n Your Password : $getPass");
-      print("\n you want to do Transaction ?");
+      print("\n\n m, you want to do Transaction ?");
       print("\n if YES --> Enter 1 \n if NO --> Enter 2 ");
       print("\n Enter 1 or 2 : ");
       int? getData = int.parse(stdin.readLineSync()!);
@@ -49,11 +49,11 @@ void main() {
       } else if (getData == 1) {
         int? n;
         do {
-          print("\n Follow the Instruction");
-          print("\n 1 for DEPOSITE");
-          print("\n 2 for WITHDRAW");
-          print("\n 3 for SHOW BALANCE");
-          print("\n 0 for Exit ");
+          print("\n ---Follow the Instruction---");
+          print("\n\t 1 for DEPOSITE");
+          print("\n\t 2 for WITHDRAW");
+          print("\n\t 3 for SHOW BALANCE");
+          print("\n\t 0 for Exit ");
           print("\n Enter here : ");
           n = int.parse(stdin.readLineSync()!);
           switch (n) {
