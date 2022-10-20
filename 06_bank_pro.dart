@@ -39,7 +39,7 @@ void main() {
       print("\n Your Password is Wrong..!! Please try Again.");
     } else {
       print("\n Your Password : $getPass");
-      print("\n\n m, you want to do Transaction ?");
+      print("\n\n you want to do Transaction ?");
       print("\n if YES --> Enter 1 \n if NO --> Enter 2 ");
       print("\n Enter 1 or 2 : ");
       int? getData = int.parse(stdin.readLineSync()!);
