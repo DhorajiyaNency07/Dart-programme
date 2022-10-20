@@ -60,13 +60,13 @@ void main() {
             case 1:
               print("\n Enter DEPOSITE Amount : ");
               int depositeAmt = int.parse(stdin.readLineSync()!);
-              print("\n you Deposite : $depositeAmt");
+              print("\n Your Deposite : $depositeAmt");
               show.deposite(depositeAmt);
               break;
             case 2:
               print("\n Enter WITHDRAW Amount : ");
               int withdrowAmt = int.parse(stdin.readLineSync()!);
-              print("\n You Withdraw : $withdrowAmt");
+              print("\n Your Withdraw : $withdrowAmt");
               show.withdrow(withdrowAmt);
               break;
             case 3:
