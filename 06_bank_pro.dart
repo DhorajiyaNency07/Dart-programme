@@ -4,14 +4,16 @@ class Bank {
   int totalBalance = 1000;
   void deposite(int depositeAmt) {
     totalBalance = totalBalance + depositeAmt;
-    print("\n After deposite : $totalBalance");
+    print("\n Available Balance : $totalBalance");
   }
 
   void withdrow(int withdrawAmt) {
-    totalBalance = totalBalance - withdrawAmt;
-    print("\n After withdraw : $totalBalance");
-    if (withdrawAmt > totalBalance) {
+    if (withdrawAmt > (totalBalance - 1000)) {
       print("\n Limit over");
+      print("\n you need to take minimum balance 1000...try again.");
+    } else {
+      totalBalance = totalBalance - withdrawAmt;
+      print("\n Available Balance : $totalBalance");
     }
   }
 
@@ -24,8 +26,8 @@ void main() {
   Bank show = Bank();
   int? accountNo = 1234567;
   String? password = "nency";
-  print("Welcome to Bank");
-  print("Enter Your A/C No. : ");
+  print("\n\n Welcome to Bank");
+  print("\n Enter Your A/C No. : ");
   int? getaAccountNo = int.parse(stdin.readLineSync()!);
   if (accountNo != getaAccountNo) {
     print("\n your A/C no is Wrong..!! Please try Again.");
@@ -37,8 +39,9 @@ void main() {
       print("\n Your Password is Wrong..!! Please try Again.");
     } else {
       print("\n Your Password : $getPass");
-      print("you want to do Transaction ?");
-      print("\n if YES --> Enter 1 \t if NO --> Enter 2");
+      print("\n you want to do Transaction ?");
+      print("\n if YES --> Enter 1 \n if NO --> Enter 2 ");
+      print("\n Enter 1 or 2 : ");
       int? getData = int.parse(stdin.readLineSync()!);
       print("\n you Entered : $getData");
       if (getData == 2) {
@@ -46,10 +49,12 @@ void main() {
       } else if (getData == 1) {
         int? n;
         do {
+          print("\n Follow the Instruction");
           print("\n 1 for DEPOSITE");
           print("\n 2 for WITHDRAW");
           print("\n 3 for SHOW BALANCE");
-          print("\n 0 for Exit");
+          print("\n 0 for Exit ");
+          print("\n Enter here : ");
           n = int.parse(stdin.readLineSync()!);
           switch (n) {
             case 1:
@@ -61,7 +66,7 @@ void main() {
             case 2:
               print("\n Enter WITHDRAW Amount : ");
               int withdrowAmt = int.parse(stdin.readLineSync()!);
-              print("You Withdraw : $withdrowAmt");
+              print("\n You Withdraw : $withdrowAmt");
               show.withdrow(withdrowAmt);
               break;
             case 3:
@@ -69,12 +74,12 @@ void main() {
                   "\n See Your Total Available Balance : ${show.totalBalance}");
               break;
             case 0:
-              print("\n Exit");
+              print("\n Exit \n");
               break;
           }
         } while (n != 0);
       } else {
-        print("\n Wrong choice");
+        print("\n Wrong choice ");
       }
     }
   }
