@@ -1,3 +1,4 @@
+// poymor... 1
 // // Purchaging The Book
 // purchase --> 1.online  2.ofline  3.library
 
@@ -7,7 +8,7 @@ class Use_library {
   }
 }
 
-class Online_purchase {
+class Online_purchase extends Use_library {
   void purchase() {
     int flipkart = 550, amazon = 600;
     print("\n\n2.  Book Name : Dart Apprentice 1");
@@ -41,6 +42,5 @@ class Ofline_purchase extends Online_purchase {
 
 void main() {
   Use_library purchage = Use_library();
-  // Online_purchase purchage = Online_purchase();
   purchage.Purchase();
 }
